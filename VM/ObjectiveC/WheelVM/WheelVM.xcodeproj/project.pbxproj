@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E471EE481A055DA70026E2A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE471A055DA70026E2A1 /* main.m */; };
+		E471EE4B1A055DA70026E2A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4A1A055DA70026E2A1 /* AppDelegate.m */; };
+		E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4D1A055DA70026E2A1 /* ViewController.m */; };
+		E471EE511A055DA70026E2A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E471EE4F1A055DA70026E2A1 /* Main.storyboard */; };
+		E471EE531A055DA70026E2A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E471EE521A055DA70026E2A1 /* Images.xcassets */; };
+		E471EE561A055DA70026E2A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E471EE541A055DA70026E2A1 /* LaunchScreen.xib */; };
+		E471EE621A055DA70026E2A1 /* WheelVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE611A055DA70026E2A1 /* WheelVMTests.m */; };
+		E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */; };
+		E471EE731A0683240026E2A1 /* TestFiles in Resources */ = {isa = PBXBuildFile; fileRef = E471EE721A0683240026E2A1 /* TestFiles */; };
+		E471EE761A0683720026E2A1 /* UILCompiledFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */; };
+		E471EE7A1A0683F10026E2A1 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE791A0683F10026E2A1 /* Util.m */; };
+		E471EE7D1A06840E0026E2A1 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE7C1A06840E0026E2A1 /* UIView+Utilities.m */; };
+		E471EE801A0684450026E2A1 /* UILUserAppInRAM.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */; };
+		E471EE831A06848C0026E2A1 /* UILFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE821A06848C0026E2A1 /* UILFunction.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E471EE5C1A055DA70026E2A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E471EE3A1A055DA70026E2A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E471EE411A055DA70026E2A1;
+			remoteInfo = WheelVM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E471EE421A055DA70026E2A1 /* WheelVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E471EE461A055DA70026E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E471EE471A055DA70026E2A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E471EE491A055DA70026E2A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E471EE4A1A055DA70026E2A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E471EE4C1A055DA70026E2A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E471EE4D1A055DA70026E2A1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E471EE501A055DA70026E2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E471EE521A055DA70026E2A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E471EE551A055DA70026E2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E471EE5B1A055DA70026E2A1 /* WheelVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E471EE601A055DA70026E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E471EE611A055DA70026E2A1 /* WheelVMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelVMTests.m; sourceTree = "<group>"; };
+		E471EE6E1A055E580026E2A1 /* WVMVirtualMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVMVirtualMachine.h; sourceTree = "<group>"; };
+		E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVMVirtualMachine.m; sourceTree = "<group>"; };
+		E471EE721A0683240026E2A1 /* TestFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestFiles; path = ../../../TestFiles; sourceTree = "<group>"; };
+		E471EE741A0683720026E2A1 /* UILCompiledFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILCompiledFileLoader.h; sourceTree = "<group>"; };
+		E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILCompiledFileLoader.m; sourceTree = "<group>"; };
+		E471EE781A0683F10026E2A1 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		E471EE791A0683F10026E2A1 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		E471EE7B1A06840E0026E2A1 /* UIView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utilities.h"; sourceTree = "<group>"; };
+		E471EE7C1A06840E0026E2A1 /* UIView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utilities.m"; sourceTree = "<group>"; };
+		E471EE7E1A0684450026E2A1 /* UILUserAppInRAM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILUserAppInRAM.h; sourceTree = "<group>"; };
+		E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILUserAppInRAM.m; sourceTree = "<group>"; };
+		E471EE811A06848C0026E2A1 /* UILFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILFunction.h; sourceTree = "<group>"; };
+		E471EE821A06848C0026E2A1 /* UILFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILFunction.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E471EE3F1A055DA70026E2A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E471EE581A055DA70026E2A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E471EE391A055DA70026E2A1 = {
+			isa = PBXGroup;
+			children = (
+				E471EE441A055DA70026E2A1 /* WheelVM */,
+				E471EE5E1A055DA70026E2A1 /* WheelVMTests */,
+				E471EE431A055DA70026E2A1 /* Products */,
+				E471EE721A0683240026E2A1 /* TestFiles */,
+			);
+			sourceTree = "<group>";
+		};
+		E471EE431A055DA70026E2A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE421A055DA70026E2A1 /* WheelVM.app */,
+				E471EE5B1A055DA70026E2A1 /* WheelVMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E471EE441A055DA70026E2A1 /* WheelVM */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE491A055DA70026E2A1 /* AppDelegate.h */,
+				E471EE4A1A055DA70026E2A1 /* AppDelegate.m */,
+				E471EE4C1A055DA70026E2A1 /* ViewController.h */,
+				E471EE4D1A055DA70026E2A1 /* ViewController.m */,
+				E471EE4F1A055DA70026E2A1 /* Main.storyboard */,
+				E471EE521A055DA70026E2A1 /* Images.xcassets */,
+				E471EE541A055DA70026E2A1 /* LaunchScreen.xib */,
+				E471EE451A055DA70026E2A1 /* Supporting Files */,
+				E471EE6E1A055E580026E2A1 /* WVMVirtualMachine.h */,
+				E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */,
+				E471EE741A0683720026E2A1 /* UILCompiledFileLoader.h */,
+				E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */,
+				E471EE7E1A0684450026E2A1 /* UILUserAppInRAM.h */,
+				E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */,
+				E471EE811A06848C0026E2A1 /* UILFunction.h */,
+				E471EE821A06848C0026E2A1 /* UILFunction.m */,
+				E471EE771A0683E50026E2A1 /* Utilities */,
+			);
+			path = WheelVM;
+			sourceTree = "<group>";
+		};
+		E471EE451A055DA70026E2A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE461A055DA70026E2A1 /* Info.plist */,
+				E471EE471A055DA70026E2A1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E471EE5E1A055DA70026E2A1 /* WheelVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE611A055DA70026E2A1 /* WheelVMTests.m */,
+				E471EE5F1A055DA70026E2A1 /* Supporting Files */,
+			);
+			path = WheelVMTests;
+			sourceTree = "<group>";
+		};
+		E471EE5F1A055DA70026E2A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE601A055DA70026E2A1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E471EE771A0683E50026E2A1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE7B1A06840E0026E2A1 /* UIView+Utilities.h */,
+				E471EE7C1A06840E0026E2A1 /* UIView+Utilities.m */,
+				E471EE781A0683F10026E2A1 /* Util.h */,
+				E471EE791A0683F10026E2A1 /* Util.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E471EE411A055DA70026E2A1 /* WheelVM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E471EE651A055DA70026E2A1 /* Build configuration list for PBXNativeTarget "WheelVM" */;
+			buildPhases = (
+				E471EE3E1A055DA70026E2A1 /* Sources */,
+				E471EE3F1A055DA70026E2A1 /* Frameworks */,
+				E471EE401A055DA70026E2A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WheelVM;
+			productName = WheelVM;
+			productReference = E471EE421A055DA70026E2A1 /* WheelVM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E471EE5A1A055DA70026E2A1 /* WheelVMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E471EE681A055DA70026E2A1 /* Build configuration list for PBXNativeTarget "WheelVMTests" */;
+			buildPhases = (
+				E471EE571A055DA70026E2A1 /* Sources */,
+				E471EE581A055DA70026E2A1 /* Frameworks */,
+				E471EE591A055DA70026E2A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E471EE5D1A055DA70026E2A1 /* PBXTargetDependency */,
+			);
+			name = WheelVMTests;
+			productName = WheelVMTests;
+			productReference = E471EE5B1A055DA70026E2A1 /* WheelVMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E471EE3A1A055DA70026E2A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = UIL;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = EmpowerEveryone;
+				TargetAttributes = {
+					E471EE411A055DA70026E2A1 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					E471EE5A1A055DA70026E2A1 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = E471EE411A055DA70026E2A1;
+					};
+				};
+			};
+			buildConfigurationList = E471EE3D1A055DA70026E2A1 /* Build configuration list for PBXProject "WheelVM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E471EE391A055DA70026E2A1;
+			productRefGroup = E471EE431A055DA70026E2A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E471EE411A055DA70026E2A1 /* WheelVM */,
+				E471EE5A1A055DA70026E2A1 /* WheelVMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E471EE401A055DA70026E2A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E471EE731A0683240026E2A1 /* TestFiles in Resources */,
+				E471EE511A055DA70026E2A1 /* Main.storyboard in Resources */,
+				E471EE561A055DA70026E2A1 /* LaunchScreen.xib in Resources */,
+				E471EE531A055DA70026E2A1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E471EE591A055DA70026E2A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E471EE3E1A055DA70026E2A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E471EE7D1A06840E0026E2A1 /* UIView+Utilities.m in Sources */,
+				E471EE761A0683720026E2A1 /* UILCompiledFileLoader.m in Sources */,
+				E471EE831A06848C0026E2A1 /* UILFunction.m in Sources */,
+				E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */,
+				E471EE4B1A055DA70026E2A1 /* AppDelegate.m in Sources */,
+				E471EE481A055DA70026E2A1 /* main.m in Sources */,
+				E471EE801A0684450026E2A1 /* UILUserAppInRAM.m in Sources */,
+				E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */,
+				E471EE7A1A0683F10026E2A1 /* Util.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E471EE571A055DA70026E2A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E471EE621A055DA70026E2A1 /* WheelVMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E471EE5D1A055DA70026E2A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E471EE411A055DA70026E2A1 /* WheelVM */;
+			targetProxy = E471EE5C1A055DA70026E2A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E471EE4F1A055DA70026E2A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E471EE501A055DA70026E2A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E471EE541A055DA70026E2A1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E471EE551A055DA70026E2A1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E471EE631A055DA70026E2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E471EE641A055DA70026E2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E471EE661A055DA70026E2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WheelVM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E471EE671A055DA70026E2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WheelVM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E471EE691A055DA70026E2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WheelVMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheelVM.app/WheelVM";
+			};
+			name = Debug;
+		};
+		E471EE6A1A055DA70026E2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WheelVMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheelVM.app/WheelVM";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E471EE3D1A055DA70026E2A1 /* Build configuration list for PBXProject "WheelVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E471EE631A055DA70026E2A1 /* Debug */,
+				E471EE641A055DA70026E2A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E471EE651A055DA70026E2A1 /* Build configuration list for PBXNativeTarget "WheelVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E471EE661A055DA70026E2A1 /* Debug */,
+				E471EE671A055DA70026E2A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E471EE681A055DA70026E2A1 /* Build configuration list for PBXNativeTarget "WheelVMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E471EE691A055DA70026E2A1 /* Debug */,
+				E471EE6A1A055DA70026E2A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E471EE3A1A055DA70026E2A1 /* Project object */;
+}

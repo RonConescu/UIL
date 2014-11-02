@@ -1,0 +1,25 @@
+find
+load
+subfind
+push
+store
+identifier
+integer
+runMethod
+declare
+popParam
+flushParams
+return
+findClass
+
+# running methods
+
+
+# searching
+find
+subfind
+
+# normal operators
+assign
+add
+multiply
