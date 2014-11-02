@@ -18,7 +18,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
 	NSLog (@"ViewController: trying to load app...");
-	UILUserAppInRAM *app = [UILCompiledFileLoader loadFromDisk];
+	UILUserAppInRAM *app = [[UILCompiledFileLoader new] loadFromDisk];
 	NSLog (@"ViewController: ...done.  What happened?  App = %@", app);
 }
 

@@ -8,12 +8,20 @@
 
 #import "UILUserAppInRAM.h"
 
-@interface UILUserAppInRAM ()
-@property (nonatomic, strong) NSMutableArray *identifiers;
-@property (nonatomic, strong) NSMutableArray *integers;
-@property (nonatomic, strong) NSMutableDictionary *functions;
-@end
-
 @implementation UILUserAppInRAM
+
+- (id) init
+{
+	self = [super init];
+
+	if (self)
+	{
+		self.identifiers = [NSMutableArray new];
+		self.integers = [NSMutableArray new];
+		self.functions = [NSMutableDictionary new];
+	}
+
+	return self;
+}
 
 @end

@@ -10,4 +10,8 @@
 
 @interface UILUserAppInRAM : NSObject
 
+@property (nonatomic, strong) NSMutableArray *identifiers;
+@property (nonatomic, strong) NSMutableArray *integers;
+@property (nonatomic, strong) NSMutableDictionary *functions;
+
 @end

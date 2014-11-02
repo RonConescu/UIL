@@ -12,6 +12,6 @@
 
 @interface UILCompiledFileLoader : NSObject
 
-+ (UILUserAppInRAM *) loadFromDisk;
+- (UILUserAppInRAM *) loadFromDisk;
 
 @end

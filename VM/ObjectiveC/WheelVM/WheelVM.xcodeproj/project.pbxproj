@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4326F351A06BD5A00138942 /* UILOneLineOfCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */; };
 		E471EE481A055DA70026E2A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE471A055DA70026E2A1 /* main.m */; };
 		E471EE4B1A055DA70026E2A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4A1A055DA70026E2A1 /* AppDelegate.m */; };
 		E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4D1A055DA70026E2A1 /* ViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4326F331A06BD5A00138942 /* UILOneLineOfCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILOneLineOfCode.h; sourceTree = "<group>"; };
+		E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILOneLineOfCode.m; sourceTree = "<group>"; };
 		E471EE421A055DA70026E2A1 /* WheelVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E471EE461A055DA70026E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E471EE471A055DA70026E2A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */,
 				E471EE811A06848C0026E2A1 /* UILFunction.h */,
 				E471EE821A06848C0026E2A1 /* UILFunction.m */,
+				E4326F331A06BD5A00138942 /* UILOneLineOfCode.h */,
+				E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */,
 				E48C61521A068D1E00636C4E /* TestFiles */,
 				E471EE771A0683E50026E2A1 /* Utilities */,
 			);
@@ -275,6 +280,7 @@
 				E471EE831A06848C0026E2A1 /* UILFunction.m in Sources */,
 				E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */,
 				E471EE4B1A055DA70026E2A1 /* AppDelegate.m in Sources */,
+				E4326F351A06BD5A00138942 /* UILOneLineOfCode.m in Sources */,
 				E471EE481A055DA70026E2A1 /* main.m in Sources */,
 				E471EE801A0684450026E2A1 /* UILUserAppInRAM.m in Sources */,
 				E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */,
