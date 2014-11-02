@@ -55,7 +55,8 @@
 		}
 		else
 		{
-			NSLog (@"WOo-hoo!  Got the file:  %@", contents);
+
+
 		}
 	}
 

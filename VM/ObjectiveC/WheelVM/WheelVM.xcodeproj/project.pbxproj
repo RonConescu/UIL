@@ -15,12 +15,12 @@
 		E471EE561A055DA70026E2A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E471EE541A055DA70026E2A1 /* LaunchScreen.xib */; };
 		E471EE621A055DA70026E2A1 /* WheelVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE611A055DA70026E2A1 /* WheelVMTests.m */; };
 		E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */; };
-		E471EE731A0683240026E2A1 /* TestFiles in Resources */ = {isa = PBXBuildFile; fileRef = E471EE721A0683240026E2A1 /* TestFiles */; };
 		E471EE761A0683720026E2A1 /* UILCompiledFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */; };
 		E471EE7A1A0683F10026E2A1 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE791A0683F10026E2A1 /* Util.m */; };
 		E471EE7D1A06840E0026E2A1 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE7C1A06840E0026E2A1 /* UIView+Utilities.m */; };
 		E471EE801A0684450026E2A1 /* UILUserAppInRAM.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */; };
 		E471EE831A06848C0026E2A1 /* UILFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE821A06848C0026E2A1 /* UILFunction.m */; };
+		E48C61541A068D2C00636C4E /* sampleWheelApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = E48C61531A068D2C00636C4E /* sampleWheelApp.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 		E471EE611A055DA70026E2A1 /* WheelVMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelVMTests.m; sourceTree = "<group>"; };
 		E471EE6E1A055E580026E2A1 /* WVMVirtualMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVMVirtualMachine.h; sourceTree = "<group>"; };
 		E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVMVirtualMachine.m; sourceTree = "<group>"; };
-		E471EE721A0683240026E2A1 /* TestFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestFiles; path = ../../../TestFiles; sourceTree = "<group>"; };
 		E471EE741A0683720026E2A1 /* UILCompiledFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILCompiledFileLoader.h; sourceTree = "<group>"; };
 		E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILCompiledFileLoader.m; sourceTree = "<group>"; };
 		E471EE781A0683F10026E2A1 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILUserAppInRAM.m; sourceTree = "<group>"; };
 		E471EE811A06848C0026E2A1 /* UILFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILFunction.h; sourceTree = "<group>"; };
 		E471EE821A06848C0026E2A1 /* UILFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILFunction.m; sourceTree = "<group>"; };
+		E48C61531A068D2C00636C4E /* sampleWheelApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleWheelApp.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,6 @@
 				E471EE441A055DA70026E2A1 /* WheelVM */,
 				E471EE5E1A055DA70026E2A1 /* WheelVMTests */,
 				E471EE431A055DA70026E2A1 /* Products */,
-				E471EE721A0683240026E2A1 /* TestFiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +117,7 @@
 				E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */,
 				E471EE811A06848C0026E2A1 /* UILFunction.h */,
 				E471EE821A06848C0026E2A1 /* UILFunction.m */,
+				E48C61521A068D1E00636C4E /* TestFiles */,
 				E471EE771A0683E50026E2A1 /* Utilities */,
 			);
 			path = WheelVM;
@@ -158,6 +158,14 @@
 				E471EE791A0683F10026E2A1 /* Util.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E48C61521A068D1E00636C4E /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E48C61531A068D2C00636C4E /* sampleWheelApp.txt */,
+			);
+			name = TestFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E471EE731A0683240026E2A1 /* TestFiles in Resources */,
+				E48C61541A068D2C00636C4E /* sampleWheelApp.txt in Resources */,
 				E471EE511A055DA70026E2A1 /* Main.storyboard in Resources */,
 				E471EE561A055DA70026E2A1 /* LaunchScreen.xib in Resources */,
 				E471EE531A055DA70026E2A1 /* Images.xcassets in Resources */,
@@ -463,6 +471,7 @@
 				E471EE671A055DA70026E2A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E471EE681A055DA70026E2A1 /* Build configuration list for PBXNativeTarget "WheelVMTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +480,7 @@
 				E471EE6A1A055DA70026E2A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
