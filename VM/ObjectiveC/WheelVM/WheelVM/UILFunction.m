@@ -9,7 +9,7 @@
 #import "UILFunction.h"
 #import "UILOneLineOfCode.h"
 
-@implementation UILFunctionZZZ
+@implementation UILFunction
 
 - (id) init
 {
@@ -17,13 +17,13 @@
 
 	if (self)
 	{
-		self.Zname = @"UntitledFunction";
-		self.ZinboundParameters = [NSMutableDictionary new];
-		self.ZdeclaredParameters = [NSMutableDictionary new];
-		self.ZreturnValue = nil;
-		self.Zcode = [NSMutableArray new];
-		self.ZassemblyLanguage = nil;
-		self.ZmachineLanguage = nil;
+		self.name = @"UntitledFunction";
+		self.inboundParameters = [NSMutableDictionary new];
+		self.declaredParameters = [NSMutableDictionary new];
+		self.returnValue = nil;
+		self.code = [NSMutableArray new];
+		self.assemblyLanguage = nil;
+		self.machineLanguage = nil;
 	}
 
 	return self;
@@ -31,12 +31,12 @@
 
 - (void) generatePackedAssemblyAndMachineLanguage
 {
-	if (self.Zcode.count > 0)
+	if (self.code.count > 0)
 	{
 		NSMutableString *assembly = [NSMutableString new];
 		NSMutableData *machine = [NSMutableData new];
 
-		for (UILOneLineOfCode *line in self.Zcode)
+		for (UILOneLineOfCode *line in self.code)
 		{
 			if (line.hasOperand)
 			{
@@ -55,21 +55,19 @@
 			}
 		}
 
-		self.ZassemblyLanguage = assembly;
-		self.ZmachineLanguage = machine;
+		self.assemblyLanguage = assembly;
+		self.machineLanguage = machine;
 
 		NSMutableString *machineLanguageValidationString = [NSMutableString new];
 
-		for (NSInteger byteIndex = 0; byteIndex < self.ZmachineLanguage.length; byteIndex ++)
+		for (NSInteger byteIndex = 0; byteIndex < self.machineLanguage.length; byteIndex ++)
 		{
 			Byte thisByte = 0;
-			[self.ZmachineLanguage getBytes: &thisByte range: NSMakeRange (byteIndex, 1)];
+			[self.machineLanguage getBytes: &thisByte range: NSMakeRange (byteIndex, 1)];
 			[machineLanguageValidationString appendFormat: @"%d ", thisByte];
 		}
 
-		NSLog (@"Function [%@]:  generated this code:", self.Zname);
-		NSLog (@"- assembly: [%@]", self.ZassemblyLanguage);
-		NSLog (@"- machine:  [%@]", machineLanguageValidationString);
+		NSLog (@"Function [%@] generated this assembly code [%@] and this machine code [%@]", self.name, self.assemblyLanguage, machineLanguageValidationString);
 	}
 }
 

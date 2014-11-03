@@ -18,7 +18,7 @@
 	{
 		self.originalLineOfCode = nil;
 		self.assemblyOperationName = nil;
-		self.machineLanguageOpcode = UILOpcodeUnknown;
+		self.machineLanguageOpcode = UILOpcodeUndetermined;
 		self.hasOperand = NO;
 		self.operand = 0;
 	}
@@ -50,12 +50,12 @@
 {
 	NSMutableString *string = [NSMutableString new];
 
-	for (NSInteger code = UILOpcodeUnknown; code <= UILOpcodePushMethodFrameWithParameters; code ++)
+	for (NSInteger code = UILOpcodeUndetermined; code <= UILOpcodePushMethodFrameWithParameters; code ++)
 	{
 		NSString *name = nil;
 
 		switch (code) {
-			case UILOpcodeUnknown: name = @"unknown"; break;
+			case UILOpcodeUndetermined: name = @"undertermined"; break;
 			case UILOpcodeIdentifier: name = @"identifier"; break;
 			case UILOpcodeInteger: name = @"integer"; break;
 			case UILOpcodeFind: name = @"find"; break;

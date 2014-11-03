@@ -19,7 +19,7 @@
 typedef enum : NSUInteger {
 
 	// Error-handling during parsing
-	UILOpcodeUnknown,
+	UILOpcodeUndetermined,
 
 	// Looking stuff up
 	UILOpcodeIdentifier,		// pull address of a certain identifying string

@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UILFunctionZZZ : NSObject
+@interface UILFunction : NSObject
 
-@property (nonatomic, strong) NSString *Zname;
-@property (nonatomic, strong) NSMutableDictionary *ZinboundParameters;
-@property (nonatomic, strong) NSMutableDictionary *ZdeclaredParameters;
-@property (nonatomic, strong) NSObject *ZreturnValue;
-@property (nonatomic, strong) NSMutableArray *Zcode;
-@property (nonatomic, strong) NSString *ZassemblyLanguage;
-@property (nonatomic, strong) NSData *ZmachineLanguage;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableDictionary *inboundParameters;
+@property (nonatomic, strong) NSMutableDictionary *declaredParameters;
+@property (nonatomic, strong) NSObject *returnValue;
+@property (nonatomic, strong) NSMutableArray *code;
+@property (nonatomic, strong) NSString *assemblyLanguage;
+@property (nonatomic, strong) NSData *machineLanguage;
 
 - (id) init;
 

@@ -24,10 +24,12 @@ typedef enum : NSUInteger {
 // Anything longer than these is fine.
 #define ASSEMBLY_LANGUAGE_SECTION_DIVIDER_PREFIX_1 @"============="
 #define ASSEMBLY_LANGUAGE_SECTION_DIVIDER_PREFIX_2 @"-------------"
-#define ASSEMBLY_LANGUAGE_SECTION_PREFIX_IDENTIFIERS @"identifiers"
-#define ASSEMBLY_LANGUAGE_SECTION_PREFIX_INTEGERS @"integers"
-#define ASSEMBLY_LANGUAGE_SECTION_PREFIX_FUNCTION @"function:"
-#define ASSEMBLY_LANGUAGE_SECTION_PREFIX_PARAMETERS @"parameters:"
+#define ASSEMBLY_LANGUAGE_SECTION_MARKER_IDENTIFIERS @"identifiers"
+#define ASSEMBLY_LANGUAGE_SECTION_MARKER_INTEGERS @"integers"
+#define ASSEMBLY_LANGUAGE_SECTION_MARKER_FUNCTION @"function:"
+#define ASSEMBLY_LANGUAGE_SECTION_MARKER_PARAMETERS @"parameters:"
+#define ASSEMBLY_LANGUAGE_METHODS_NO_PARAMETERS_MARKER @"none"
+#define ASSEMBLY_LANGUAGE_METHODS_PARAMETER_SEPARATOR @", "
 
 static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 
@@ -117,10 +119,10 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 
 					case UILCompiledFileSectionTypeOneFunction:
 					{
-						UILFunctionZZZ *function = [self extractOneFunctionFromSection: section];
+						UILFunction *function = [self extractOneFunctionFromSection: section];
 
 						if (function != nil)
-							app.functions [function.Zname] = function;
+							app.functions [function.name] = function;
 
 						break;
 					}
@@ -175,9 +177,9 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 	NSString *label = [sectionOfLinesFromFile [1] lowercaseString];
 
 	UILCompiledFileSectionType result = (
-										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_PREFIX_IDENTIFIERS] ? UILCompiledFileSectionTypeIdentifiers :
-										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_PREFIX_INTEGERS] ? UILCompiledFileSectionTypeIntegers :
-										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_PREFIX_FUNCTION] ? UILCompiledFileSectionTypeOneFunction :
+										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_IDENTIFIERS] ? UILCompiledFileSectionTypeIdentifiers :
+										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_INTEGERS] ? UILCompiledFileSectionTypeIntegers :
+										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_FUNCTION] ? UILCompiledFileSectionTypeOneFunction :
 										 UILCompiledFileSectionTypeNotInteresting
 										 );
 
@@ -266,9 +268,9 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 	return integers;
 }
 
-- (UILFunctionZZZ *) extractOneFunctionFromSection: (NSArray *) sectionOfLinesFromFile
+- (UILFunction *) extractOneFunctionFromSection: (NSArray *) sectionOfLinesFromFile
 {
-	UILFunctionZZZ *whatIsHappeningHere = [UILFunctionZZZ new];
+	UILFunction *function = [UILFunction new];
 
 	BOOL isFirstLine = YES;
 	BOOL isInHeaderSection = YES;
@@ -287,8 +289,8 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 
 		else if (isInHeaderSection)
 		{
-			[self tryToExtractFunctionNameFromString: line intoFunction: whatIsHappeningHere];
-			[self tryToExtractDeclaredParametersFromString: line intoFunction: whatIsHappeningHere];
+			[self tryToExtractFunctionNameFromString: line intoFunction: function];
+			[self tryToExtractDeclaredParametersFromString: line intoFunction: function];
 		}
 
 		else
@@ -333,15 +335,15 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 																						 hasOperand: haveOperand
 																							operand: operand];
 
-					[whatIsHappeningHere.Zcode addObject: lineOfCode];
+					[function.code addObject: lineOfCode];
 				}
 			}
 		}
 	}
 
-	[whatIsHappeningHere generatePackedAssemblyAndMachineLanguage];
+	[function generatePackedAssemblyAndMachineLanguage];
 
-	return whatIsHappeningHere;
+	return function;
 }
 
 - (NSString *) trimAfterStrippingTrailingCommentFromLine: (NSString *) line
@@ -361,21 +363,21 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 	return result;
 }
 
-- (void) tryToExtractFunctionNameFromString: (NSString *) line intoFunction: (UILFunctionZZZ *) function
+- (void) tryToExtractFunctionNameFromString: (NSString *) line intoFunction: (UILFunction *) function
 {
-	line = [self trimAfterStrippingHeader: ASSEMBLY_LANGUAGE_SECTION_PREFIX_FUNCTION fromString: line];
+	line = [self trimAfterStrippingHeader: ASSEMBLY_LANGUAGE_SECTION_MARKER_FUNCTION fromString: line];
 
 	if (line != nil)
 	{
-		function.Zname = line;
-		NSLog (@"Found function with name [%@].", function.Zname);
+		function.name = line;
+		NSLog (@"Found function with name [%@].", function.name);
 	}
 }
 
 - (void) tryToExtractDeclaredParametersFromString: (NSString *) line
-									 intoFunction: (UILFunctionZZZ *) function
+									 intoFunction: (UILFunction *) function
 {
-	line = [self trimAfterStrippingHeader: ASSEMBLY_LANGUAGE_SECTION_PREFIX_PARAMETERS fromString: line];
+	line = [self trimAfterStrippingHeader: ASSEMBLY_LANGUAGE_SECTION_MARKER_PARAMETERS fromString: line];
 
 	if (line != nil)
 	{
@@ -385,14 +387,17 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 		 the "parameters:" part (above), and then split on the ", "
 		 separating the parameter names.
 		 */
-		NSArray *parameterNames = [line componentsSeparatedByCharactersInSet: [[NSCharacterSet alphanumericCharacterSet] invertedSet]];
+		NSArray *parameterNames = [line componentsSeparatedByString: ASSEMBLY_LANGUAGE_METHODS_PARAMETER_SEPARATOR];
+
+		if (parameterNames.count == 1 && [parameterNames.firstObject isEqualToString: ASSEMBLY_LANGUAGE_METHODS_NO_PARAMETERS_MARKER])
+			parameterNames = nil;
 
 		for (NSString *parameterName in parameterNames)
-			function.ZdeclaredParameters [parameterName] = [NSNull null];
+			function.declaredParameters [parameterName] = [NSNull null];
 
 		if (parameterNames.count > 0)
 		{
-			NSLog (@"Function [%@] has parameters [%@].", function.Zname, [function.ZdeclaredParameters.allKeys componentsJoinedByString: @", "]);
+			NSLog (@"Function [%@] has parameters [%@].", function.name, [function.declaredParameters.allKeys componentsJoinedByString: @", "]);
 		}
 	}
 }
