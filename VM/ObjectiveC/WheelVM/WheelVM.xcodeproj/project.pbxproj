@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E4326F351A06BD5A00138942 /* UILOneLineOfCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */; };
+		E46901F31A074114004167D7 /* UILOpcodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E46901F21A074114004167D7 /* UILOpcodeHelper.m */; };
 		E471EE481A055DA70026E2A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE471A055DA70026E2A1 /* main.m */; };
 		E471EE4B1A055DA70026E2A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4A1A055DA70026E2A1 /* AppDelegate.m */; };
 		E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4D1A055DA70026E2A1 /* ViewController.m */; };
@@ -37,6 +38,9 @@
 /* Begin PBXFileReference section */
 		E4326F331A06BD5A00138942 /* UILOneLineOfCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILOneLineOfCode.h; sourceTree = "<group>"; };
 		E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILOneLineOfCode.m; sourceTree = "<group>"; };
+		E46901F01A0736B4004167D7 /* UILOpcodeEntries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILOpcodeEntries.h; sourceTree = "<group>"; };
+		E46901F11A074114004167D7 /* UILOpcodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILOpcodeHelper.h; sourceTree = "<group>"; };
+		E46901F21A074114004167D7 /* UILOpcodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILOpcodeHelper.m; sourceTree = "<group>"; };
 		E471EE421A055DA70026E2A1 /* WheelVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E471EE461A055DA70026E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E471EE471A055DA70026E2A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +128,9 @@
 				E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */,
 				E48C61521A068D1E00636C4E /* TestFiles */,
 				E471EE771A0683E50026E2A1 /* Utilities */,
+				E46901F11A074114004167D7 /* UILOpcodeHelper.h */,
+				E46901F21A074114004167D7 /* UILOpcodeHelper.m */,
+				E46901F01A0736B4004167D7 /* UILOpcodeEntries.h */,
 			);
 			path = WheelVM;
 			sourceTree = "<group>";
@@ -283,6 +290,7 @@
 				E4326F351A06BD5A00138942 /* UILOneLineOfCode.m in Sources */,
 				E471EE481A055DA70026E2A1 /* main.m in Sources */,
 				E471EE801A0684450026E2A1 /* UILUserAppInRAM.m in Sources */,
+				E46901F31A074114004167D7 /* UILOpcodeHelper.m in Sources */,
 				E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */,
 				E471EE7A1A0683F10026E2A1 /* Util.m in Sources */,
 			);

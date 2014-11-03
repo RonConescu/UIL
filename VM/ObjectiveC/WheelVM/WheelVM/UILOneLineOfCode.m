@@ -46,37 +46,4 @@
 	return self;
 }
 
-+ (void) printOpCodes
-{
-	NSMutableString *string = [NSMutableString new];
-
-	for (NSInteger code = UILOpcodeUndetermined; code <= UILOpcodePushMethodFrameWithParameters; code ++)
-	{
-		NSString *name = nil;
-
-		switch (code) {
-			case UILOpcodeUndetermined: name = @"undertermined"; break;
-			case UILOpcodeIdentifier: name = @"identifier"; break;
-			case UILOpcodeInteger: name = @"integer"; break;
-			case UILOpcodeFind: name = @"find"; break;
-			case UILOpcodeFindInObject: name = @"findInObject"; break;
-			case UILOpcodeLoad: name = @"load"; break;
-			case UILOpcodeInvokeMethod: name = @"invokeMethod"; break;
-			case UILOpcodeReturn: name = @"return"; break;
-			case UILOpcodeExit: name = @"exit"; break;
-			case UILOpcodeAssign: name = @"assign"; break;
-			case UILOpcodeDeclare: name = @"declare"; break;
-			case UILOpcodeMultiply: name = @"multiply"; break;
-			case UILOpcodePushThis: name = @"pushThis"; break;
-			case UILOpcodePushMethodFrameWithParameters: name = @"pushMethodFrame"; break;
-
-			default: name = @"unknown (seriously)"; break;
-		}
-
-		[string appendFormat: @"   %d %@", (int) code, name];
-	}
-
-	NSLog (@ "For reference, the opcodes are:  %@", string);
-}
-
 @end

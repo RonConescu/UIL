@@ -10,6 +10,7 @@
 #import "Util.h"
 #import "UILFunction.h"
 #import "UILOneLineOfCode.h"
+#import "UILOpcodeHelper.h"
 
 typedef enum : NSUInteger {
 	UILCompiledFileSectionTypeNotInteresting,
@@ -31,32 +32,8 @@ typedef enum : NSUInteger {
 #define ASSEMBLY_LANGUAGE_METHODS_NO_PARAMETERS_MARKER @"none"
 #define ASSEMBLY_LANGUAGE_METHODS_PARAMETER_SEPARATOR @", "
 
-static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
-
 
 @implementation UILCompiledFileLoader
-
-+ (void) initialize
-{
-	if (ASSEMBLY_LANGUAGE_STRINGS_AND_CODES == nil)
-	{
-		ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = @{
-			@"identifier":                   	@(UILOpcodeIdentifier),
-			@"integer":                      	@(UILOpcodeInteger),
-			@"find":                         	@(UILOpcodeFind),
-			@"findInObject":                 	@(UILOpcodeFindInObject),
-			@"load":                         	@(UILOpcodeLoad),
-			@"invokeMethod":                 	@(UILOpcodeInvokeMethod),
-			@"return":                       	@(UILOpcodeReturn),
-			@"exit":                         	@(UILOpcodeExit),
-			@"assign":                       	@(UILOpcodeAssign),
-			@"declare":                      	@(UILOpcodeDeclare),
-			@"multiply":                     	@(UILOpcodeMultiply),
-			@"pushThis":                     	@(UILOpcodePushThis),
-			@"pushMethodFrameWithParameters":	@(UILOpcodePushMethodFrameWithParameters),
-		};
-	}
-}
 
 - (UILUserAppInRAM *) loadFromDisk
 {
@@ -131,7 +108,7 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 		}
 	}
 
-	[UILOneLineOfCode printOpCodes];
+	[UILOpcodeHelper printAll];
 
 	return app;
 }
@@ -303,17 +280,15 @@ static NSDictionary *ASSEMBLY_LANGUAGE_STRINGS_AND_CODES = nil;
 
 				NSString *assemblyCommand = opcodeAndOperand [0];
 
-				NSNumber *maybeOpcode = ASSEMBLY_LANGUAGE_STRINGS_AND_CODES [assemblyCommand];
+				UILOpcode opcode = [UILOpcodeHelper opcodeForCamelCaseName: assemblyCommand];
 
-				if (maybeOpcode == nil)
+				if (opcode == UILOpcodeUndetermined)
 				{
 					NSLog (@"Couldn't identify opcode in [%@].  (This is probably bad.)  Skipping.", trimmedLine);
 				}
 
 				else
 				{
-					UILOpcode opcode = (UILOpcode) maybeOpcode.integerValue;
-
 					BOOL haveOperand = NO;
 					NSInteger operand = 0;
 

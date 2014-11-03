@@ -2,12 +2,6 @@
 About this file
 ====================
 This is an annotated version of an assembly-language file.
-Differences between this and a normal file:
-- Visible dividers like "-------" at the start of a line indicate a section; the first line in between those "-------"s is the name of that section
-- To add comments to a whole section:  put comments after the first line between the "------"s
-- To add comments at the end of a line:  put a ";" and start typing
-- lines might end in comments, which start with ";"
-- This first section is wholly optional, just for your own notes
 
 Special section names are:
 	Identifiers
@@ -24,7 +18,9 @@ Keywords in function headers are:
 Every other section is a comment.
 Anything after a ";" is a comment.
 Annotate this file however you like.
-To generate a stripped-down version of it, add _______ to your project settings, or as a variable at the top of your file.
+
+To generate a stripped-down version of it, add (blah-blah-blah)
+to your project settings, or as a variable at the top of your file.
 
 		
 ====================
@@ -39,6 +35,7 @@ scale (one, two): {
 	return result;
 }
 
+
 ====================
 Identifiers
 ====================
@@ -49,6 +46,7 @@ one
 two
 result
 
+
 ====================
 Integers
 ====================
@@ -56,6 +54,7 @@ Integers
 5
 2
 0
+
 
 ====================
 Functions
@@ -69,38 +68,30 @@ class: none
 parameters: none
 return: noneDeclared
 code:
-	var q = 4;
-	var x = scale (q, 5) * 2;
+	q = 4;
+	x = scale (q, 5) * 2;
 --------------------
-identifier 1		; q.			Stack: &identifier1
-declare				; declare q.	Stack: 
-identifier 1		; q.			Stack: &identifier1
-find				; 				Stack: &q
-integer 1			; 4.			Stack: &q &integer1
-load				; 				Stack: &q 4
-assign				; q = 4.		Stack: 
-identifier 2		; x				Stack: &identifier2
-declare				; declare x.	Stack: 
-identifier 2		; x				Stack: &identifier2
-find				; 				Stack: &x
-identifier 1		; q				Stack: &x &identifier1
-find				; 				Stack: &x &q
-load				; 				Stack: &x q
-integer 2			; 5				Stack: &x q &integer2
-load				; 				Stack: &x q 5
-pushThis			;				Stack: &x q 5 &this. Note: this is null, hence global.
-identifier 3		; scale			Stack: &x q 5 &this &identifier3
-findInObject		; 				Stack: &x q 5 &this &scale
-
-pushMethodFrameWithParameters 2		; Leaves implementation of method frame to implementor of VM.  Method frame consumes a "this" pointer and the specified number of parameters.  Method will leave a return value on the stack if it has one.
-
-invokeMethod		; Call this.scale (q, 5).  Will return to here.
-
-integer 3			; 2							Stack: &x resultOfScale &integer3
-load				; 							Stack: &x resultOfScale 2
-multiply			; 							Stack: &x resultOfScale*2
-assign				; x = 2*resultOfScale()		Stack: (empty)
-exit				; Done.
+identifier 1			; q					Stack: &identifier1
+findOrDeclareAndFind	;					Stack: &q
+integer 1				; 4					Stack: &q &integer1
+load					; 					Stack: &q 4
+assign					; q = 4				Stack: (empty)
+identifier 2			; x					Stack: &identifier2
+findOrDeclareAndFind	; declare x			Stack: (empty)
+identifier 1			; q					Stack: &x &identifier1
+find					; 					Stack: &x &q
+load					; 					Stack: &x q
+integer 2				; 5					Stack: &x q &integer2
+load					; 					Stack: &x q 5
+identifier 3			; scale				Stack: &x q 5 &this &identifier3
+find					; 					Stack: &x q 5 &this &scale
+pushMethodBarrier		; for safety. consumed when invokeMethod returns.
+invokeMethod 2			; run method with 2 params.  Will return to here.
+integer 3				; 2					Stack: &x scale() &integer3
+load					; 					Stack: &x scale() 2
+multiply				; 					Stack: &x scale() * 2
+assign					; x = 2*scale()		Stack: (empty)
+exit 0					; Done.
 
 
 --------------------
@@ -116,9 +107,7 @@ code:
 By the time we get here, the VM has allocated and filled in the parameters, so we can invoke them.
 --------------------
 identifier 6		; result	Stack: &identifier6
-declare				; 			Stack: (empty)
-identifier 6		; result	Stack: &identifier6
-find				; 			Stack: &result
+declareAndFind		; 			Stack: &result
 integer 4			; 0			Stack: &result 0
 assign				; 			Stack: (empty)
 identifier 6		; result	Stack: &identifier6
