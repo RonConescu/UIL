@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UILOpcodeHelper.h"
+#import "UILOpcode.h"
 
 
 @interface UILOneLineOfCode : NSObject

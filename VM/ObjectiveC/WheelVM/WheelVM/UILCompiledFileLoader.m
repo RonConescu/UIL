@@ -10,7 +10,7 @@
 #import "Util.h"
 #import "UILFunction.h"
 #import "UILOneLineOfCode.h"
-#import "UILOpcodeHelper.h"
+#import "UILOpcode.h"
 
 typedef enum : NSUInteger {
 	UILCompiledFileSectionTypeNotInteresting,
@@ -153,12 +153,13 @@ typedef enum : NSUInteger {
 {
 	NSString *label = [sectionOfLinesFromFile [1] lowercaseString];
 
-	UILCompiledFileSectionType result = (
-										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_IDENTIFIERS] ? UILCompiledFileSectionTypeIdentifiers :
-										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_INTEGERS] ? UILCompiledFileSectionTypeIntegers :
-										 [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_FUNCTION] ? UILCompiledFileSectionTypeOneFunction :
-										 UILCompiledFileSectionTypeNotInteresting
-										 );
+	UILCompiledFileSectionType result =
+	(
+	  [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_IDENTIFIERS] ? UILCompiledFileSectionTypeIdentifiers :
+	  [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_INTEGERS]    ? UILCompiledFileSectionTypeIntegers :
+	  [label hasPrefix: ASSEMBLY_LANGUAGE_SECTION_MARKER_FUNCTION]    ? UILCompiledFileSectionTypeOneFunction :
+	  UILCompiledFileSectionTypeNotInteresting
+	);
 
 	return result;
 }

@@ -1,5 +1,5 @@
 //
-//  UILOpcodeHelper.h
+//  UILOpcode.h
 //  WheelVM
 //
 //  Created by Ron Conescu on 11/2/14.
@@ -38,7 +38,7 @@
 typedef enum : NSUInteger {
 
 	#define ENUM_ENTRY(itemName) UILOpcode ## itemName ,
-	#include "UILOpcodeEntries.h"
+	#include "UILOpcode_Internal.h"
 	#undef ENUM_ENTRY
 
 } UILOpcode;

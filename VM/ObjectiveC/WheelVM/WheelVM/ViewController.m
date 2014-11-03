@@ -20,6 +20,8 @@
 	NSLog (@"ViewController: trying to load app...");
 	UILUserAppInRAM *app = [[UILCompiledFileLoader new] loadFromDisk];
 	NSLog (@"ViewController: ...done.  What happened?  App = %@", app);
+
+
 }
 
 - (void)didReceiveMemoryWarning {

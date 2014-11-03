@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4228BA11A07E06F00F17B8A /* UILCodeExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4228BA01A07E06F00F17B8A /* UILCodeExecutor.m */; };
 		E4326F351A06BD5A00138942 /* UILOneLineOfCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */; };
-		E46901F31A074114004167D7 /* UILOpcodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E46901F21A074114004167D7 /* UILOpcodeHelper.m */; };
+		E46901F31A074114004167D7 /* UILOpcode.m in Sources */ = {isa = PBXBuildFile; fileRef = E46901F21A074114004167D7 /* UILOpcode.m */; };
 		E471EE481A055DA70026E2A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE471A055DA70026E2A1 /* main.m */; };
 		E471EE4B1A055DA70026E2A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4A1A055DA70026E2A1 /* AppDelegate.m */; };
 		E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE4D1A055DA70026E2A1 /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		E471EE531A055DA70026E2A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E471EE521A055DA70026E2A1 /* Images.xcassets */; };
 		E471EE561A055DA70026E2A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E471EE541A055DA70026E2A1 /* LaunchScreen.xib */; };
 		E471EE621A055DA70026E2A1 /* WheelVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE611A055DA70026E2A1 /* WheelVMTests.m */; };
-		E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */; };
 		E471EE761A0683720026E2A1 /* UILCompiledFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */; };
 		E471EE7A1A0683F10026E2A1 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE791A0683F10026E2A1 /* Util.m */; };
 		E471EE7D1A06840E0026E2A1 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E471EE7C1A06840E0026E2A1 /* UIView+Utilities.m */; };
@@ -36,11 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4228B9F1A07E06F00F17B8A /* UILCodeExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILCodeExecutor.h; sourceTree = "<group>"; };
+		E4228BA01A07E06F00F17B8A /* UILCodeExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILCodeExecutor.m; sourceTree = "<group>"; };
 		E4326F331A06BD5A00138942 /* UILOneLineOfCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILOneLineOfCode.h; sourceTree = "<group>"; };
 		E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILOneLineOfCode.m; sourceTree = "<group>"; };
-		E46901F01A0736B4004167D7 /* UILOpcodeEntries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILOpcodeEntries.h; sourceTree = "<group>"; };
-		E46901F11A074114004167D7 /* UILOpcodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILOpcodeHelper.h; sourceTree = "<group>"; };
-		E46901F21A074114004167D7 /* UILOpcodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILOpcodeHelper.m; sourceTree = "<group>"; };
+		E46901F01A0736B4004167D7 /* UILOpcode_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILOpcode_Internal.h; sourceTree = "<group>"; };
+		E46901F11A074114004167D7 /* UILOpcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILOpcode.h; sourceTree = "<group>"; };
+		E46901F21A074114004167D7 /* UILOpcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILOpcode.m; sourceTree = "<group>"; };
 		E471EE421A055DA70026E2A1 /* WheelVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E471EE461A055DA70026E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E471EE471A055DA70026E2A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		E471EE5B1A055DA70026E2A1 /* WheelVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E471EE601A055DA70026E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E471EE611A055DA70026E2A1 /* WheelVMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelVMTests.m; sourceTree = "<group>"; };
-		E471EE6E1A055E580026E2A1 /* WVMVirtualMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVMVirtualMachine.h; sourceTree = "<group>"; };
-		E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVMVirtualMachine.m; sourceTree = "<group>"; };
 		E471EE741A0683720026E2A1 /* UILCompiledFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILCompiledFileLoader.h; sourceTree = "<group>"; };
 		E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILCompiledFileLoader.m; sourceTree = "<group>"; };
 		E471EE781A0683F10026E2A1 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -87,6 +87,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4228BA21A07E17F00F17B8A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE7E1A0684450026E2A1 /* UILUserAppInRAM.h */,
+				E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */,
+				E471EE811A06848C0026E2A1 /* UILFunction.h */,
+				E471EE821A06848C0026E2A1 /* UILFunction.m */,
+				E4326F331A06BD5A00138942 /* UILOneLineOfCode.h */,
+				E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		E4228BA31A07E18800F17B8A /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE741A0683720026E2A1 /* UILCompiledFileLoader.h */,
+				E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */,
+				E4228B9F1A07E06F00F17B8A /* UILCodeExecutor.h */,
+				E4228BA01A07E06F00F17B8A /* UILCodeExecutor.m */,
+			);
+			name = VM;
+			sourceTree = "<group>";
+		};
+		E4228BA41A07E19900F17B8A /* Opcodes and English equivalents */ = {
+			isa = PBXGroup;
+			children = (
+				E46901F11A074114004167D7 /* UILOpcode.h */,
+				E46901F21A074114004167D7 /* UILOpcode.m */,
+				E46901F01A0736B4004167D7 /* UILOpcode_Internal.h */,
+			);
+			name = "Opcodes and English equivalents";
+			sourceTree = "<group>";
+		};
+		E4228BA51A07E1CA00F17B8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E471EE4C1A055DA70026E2A1 /* ViewController.h */,
+				E471EE4D1A055DA70026E2A1 /* ViewController.m */,
+				E471EE4F1A055DA70026E2A1 /* Main.storyboard */,
+				E471EE541A055DA70026E2A1 /* LaunchScreen.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E471EE391A055DA70026E2A1 = {
 			isa = PBXGroup;
 			children = (
@@ -110,27 +155,14 @@
 			children = (
 				E471EE491A055DA70026E2A1 /* AppDelegate.h */,
 				E471EE4A1A055DA70026E2A1 /* AppDelegate.m */,
-				E471EE4C1A055DA70026E2A1 /* ViewController.h */,
-				E471EE4D1A055DA70026E2A1 /* ViewController.m */,
-				E471EE4F1A055DA70026E2A1 /* Main.storyboard */,
 				E471EE521A055DA70026E2A1 /* Images.xcassets */,
-				E471EE541A055DA70026E2A1 /* LaunchScreen.xib */,
-				E471EE451A055DA70026E2A1 /* Supporting Files */,
-				E471EE6E1A055E580026E2A1 /* WVMVirtualMachine.h */,
-				E471EE6F1A055E580026E2A1 /* WVMVirtualMachine.m */,
-				E471EE741A0683720026E2A1 /* UILCompiledFileLoader.h */,
-				E471EE751A0683720026E2A1 /* UILCompiledFileLoader.m */,
-				E471EE7E1A0684450026E2A1 /* UILUserAppInRAM.h */,
-				E471EE7F1A0684450026E2A1 /* UILUserAppInRAM.m */,
-				E471EE811A06848C0026E2A1 /* UILFunction.h */,
-				E471EE821A06848C0026E2A1 /* UILFunction.m */,
-				E4326F331A06BD5A00138942 /* UILOneLineOfCode.h */,
-				E4326F341A06BD5A00138942 /* UILOneLineOfCode.m */,
+				E4228BA51A07E1CA00F17B8A /* Views */,
+				E4228BA31A07E18800F17B8A /* VM */,
+				E4228BA41A07E19900F17B8A /* Opcodes and English equivalents */,
+				E4228BA21A07E17F00F17B8A /* Data */,
 				E48C61521A068D1E00636C4E /* TestFiles */,
 				E471EE771A0683E50026E2A1 /* Utilities */,
-				E46901F11A074114004167D7 /* UILOpcodeHelper.h */,
-				E46901F21A074114004167D7 /* UILOpcodeHelper.m */,
-				E46901F01A0736B4004167D7 /* UILOpcodeEntries.h */,
+				E471EE451A055DA70026E2A1 /* Supporting Files */,
 			);
 			path = WheelVM;
 			sourceTree = "<group>";
@@ -283,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E471EE7D1A06840E0026E2A1 /* UIView+Utilities.m in Sources */,
+				E4228BA11A07E06F00F17B8A /* UILCodeExecutor.m in Sources */,
 				E471EE761A0683720026E2A1 /* UILCompiledFileLoader.m in Sources */,
 				E471EE831A06848C0026E2A1 /* UILFunction.m in Sources */,
 				E471EE4E1A055DA70026E2A1 /* ViewController.m in Sources */,
@@ -290,8 +323,7 @@
 				E4326F351A06BD5A00138942 /* UILOneLineOfCode.m in Sources */,
 				E471EE481A055DA70026E2A1 /* main.m in Sources */,
 				E471EE801A0684450026E2A1 /* UILUserAppInRAM.m in Sources */,
-				E46901F31A074114004167D7 /* UILOpcodeHelper.m in Sources */,
-				E471EE701A055E580026E2A1 /* WVMVirtualMachine.m in Sources */,
+				E46901F31A074114004167D7 /* UILOpcode.m in Sources */,
 				E471EE7A1A0683F10026E2A1 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

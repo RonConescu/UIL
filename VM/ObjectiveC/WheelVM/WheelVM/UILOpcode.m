@@ -1,12 +1,12 @@
 //
-//  UILOpcodeHelper.m
+//  UILOpcode.m
 //  WheelVM
 //
 //  Created by Ron Conescu on 11/2/14.
 //  Copyright (c) 2014 EmpowerEveryone. All rights reserved.
 //
 
-#import "UILOpcodeHelper.h"
+#import "UILOpcode.h"
 
 
 static NSDictionary *camelCaseNamesToOpcodes = nil;
@@ -16,11 +16,11 @@ static NSDictionary *opcodesToTitleCaseNames = nil;
 
 
 
-@interface NSString (UILOpcodeHelper)
+@interface NSString (UILOpcode)
 @property (nonatomic, readonly) NSString *stringWithFirstLetterLowercase;
 @end
 
-@implementation NSString (UILOpcodeHelper)
+@implementation NSString (UILOpcode)
 
 - (NSString *) stringWithFirstLetterLowercase
 {
@@ -57,25 +57,25 @@ static NSDictionary *opcodesToTitleCaseNames = nil;
 
 		titleCaseNamesToOpcodes = @{
 							#define ENUM_ENTRY(itemName) (@#itemName): ( @(UILOpcode ## itemName) ),		// --> @"keyword": @(value),
-							#include "UILOpcodeEntries.h"
+							#include "UILOpcode_Internal.h"
 							#undef ENUM_ENTRY
 						   };
 
 		camelCaseNamesToOpcodes = @{
 							#define ENUM_ENTRY(itemName) [(@#itemName) stringWithFirstLetterLowercase]: ( @(UILOpcode ## itemName) ),		// --> @"keyword": @(value),
-							#include "UILOpcodeEntries.h"
+							#include "UILOpcode_Internal.h"
 							#undef ENUM_ENTRY
 						   };
 
 		opcodesToTitleCaseNames = @{
 							#define ENUM_ENTRY(itemName) ( @(UILOpcode ## itemName) ) : (@#itemName),		// --> @(value): @"keyword",
-							#include "UILOpcodeEntries.h"
+							#include "UILOpcode_Internal.h"
 							#undef ENUM_ENTRY
 						   };
 
 		opcodesToCamelCaseNames = @{
 							#define ENUM_ENTRY(itemName) ( @(UILOpcode ## itemName) ) : [(@#itemName) stringWithFirstLetterLowercase],		// --> @(value): @"keyword",
-							#include "UILOpcodeEntries.h"
+							#include "UILOpcode_Internal.h"
 							#undef ENUM_ENTRY
 						   };
 	}
