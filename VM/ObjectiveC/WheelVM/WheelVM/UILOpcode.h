@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
+#define APP_MAIN_FUNCTION_NAME @"__globalScript"
+
+
 /*
  The integers behind these values ARE my machine language.
 
@@ -37,7 +40,7 @@
  */
 typedef enum : NSUInteger {
 
-	#define ENUM_ENTRY(itemName) UILOpcode ## itemName ,
+	#define ENUM_ENTRY(itemName, isParameterNeeded) UILOpcode ## itemName ,
 	#include "UILOpcode_Internal.h"
 	#undef ENUM_ENTRY
 
@@ -61,6 +64,10 @@ typedef enum : NSUInteger {
 + (UILOpcode) opcodeForTitleCaseName: (NSString *) name;
 + (NSString *) camelCaseNameForOpcode: (UILOpcode) opcode;
 + (NSString *) titleCaseNameForOpcode: (UILOpcode) opcode;
+
++ (BOOL) opcodeRequiresParameter: (UILOpcode) opcode;
+
+//+ (NSString *) selectorNameForHandlingOpcode: (UILOpcode) opcode;
 
 + (void) printAll;
 

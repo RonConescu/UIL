@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UILUserAppInRAM.h"
 #import "UILCompiledFileLoader.h"
+#import "UILCodeExecutor.h"
 
 @implementation ViewController
 
@@ -21,7 +22,10 @@
 	UILUserAppInRAM *app = [[UILCompiledFileLoader new] loadFromDisk];
 	NSLog (@"ViewController: ...done.  What happened?  App = %@", app);
 
-
+	NSLog (@"ViewController: Let's run the app!");
+	UILCodeExecutor *executor = [UILCodeExecutor new];
+	[executor runApp: app];
+	NSLog (@"ViewController: ...what happened?");
 }
 
 - (void)didReceiveMemoryWarning {

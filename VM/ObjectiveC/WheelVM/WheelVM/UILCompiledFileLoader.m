@@ -87,11 +87,11 @@ typedef enum : NSUInteger {
 						break;
 
 					case UILCompiledFileSectionTypeIdentifiers:
-						[app.identifiers addObjectsFromArray: [self extractIdentifiersFromSection: section]];
+						[app setListOfDetectedIdentifiers: [self extractIdentifiersFromSection: section]];
 						break;
 
 					case UILCompiledFileSectionTypeIntegers:
-						[app.integers addObjectsFromArray: [self extractIntegersFromSection: section]];
+						[app setListOfDetectedIntegers: [self extractIntegersFromSection: section]];
 						break;
 
 					case UILCompiledFileSectionTypeOneFunction:
@@ -99,12 +99,18 @@ typedef enum : NSUInteger {
 						UILFunction *function = [self extractOneFunctionFromSection: section];
 
 						if (function != nil)
-							app.functions [function.name] = function;
+							[app addDetectedFunction: function];
 
 						break;
 					}
 				}
 			}
+
+			/**
+			 A hack, for this method.  See explanation over
+			 the internal (private) "functions" property.
+			 */
+			[app recomputePubliclyVisibleFunctions];
 		}
 	}
 
@@ -366,14 +372,15 @@ typedef enum : NSUInteger {
 		NSArray *parameterNames = [line componentsSeparatedByString: ASSEMBLY_LANGUAGE_METHODS_PARAMETER_SEPARATOR];
 
 		if (parameterNames.count == 1 && [parameterNames.firstObject isEqualToString: ASSEMBLY_LANGUAGE_METHODS_NO_PARAMETERS_MARKER])
+		{
 			parameterNames = nil;
+		}
 
-		for (NSString *parameterName in parameterNames)
-			function.declaredParameters [parameterName] = [NSNull null];
+		function.declaredParameterNames = parameterNames;
 
 		if (parameterNames.count > 0)
 		{
-			NSLog (@"Function [%@] has parameters [%@].", function.name, [function.declaredParameters.allKeys componentsJoinedByString: @", "]);
+			NSLog (@"Function [%@] has parameters [%@].", function.name, [function.declaredParameterNames componentsJoinedByString: @", "]);
 		}
 	}
 }

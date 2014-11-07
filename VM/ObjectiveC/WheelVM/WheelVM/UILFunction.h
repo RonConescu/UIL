@@ -11,9 +11,7 @@
 @interface UILFunction : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSMutableDictionary *inboundParameters;
-@property (nonatomic, strong) NSMutableDictionary *declaredParameters;
-@property (nonatomic, strong) NSObject *returnValue;
+@property (nonatomic, strong) NSArray *declaredParameterNames;
 @property (nonatomic, strong) NSMutableArray *code;
 @property (nonatomic, strong) NSString *assemblyLanguage;
 @property (nonatomic, strong) NSData *machineLanguage;

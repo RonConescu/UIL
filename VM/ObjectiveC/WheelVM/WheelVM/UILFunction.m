@@ -18,9 +18,7 @@
 	if (self)
 	{
 		self.name = @"UntitledFunction";
-		self.inboundParameters = [NSMutableDictionary new];
-		self.declaredParameters = [NSMutableDictionary new];
-		self.returnValue = nil;
+		self.declaredParameterNames = [NSArray new];
 		self.code = [NSMutableArray new];
 		self.assemblyLanguage = nil;
 		self.machineLanguage = nil;

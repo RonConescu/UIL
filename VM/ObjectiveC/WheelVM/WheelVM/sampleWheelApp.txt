@@ -71,24 +71,15 @@ code:
 	q = 4;
 	x = scale (q, 5) * 2;
 --------------------
-identifier 1			; q					Stack: &identifier1
-findOrDeclareAndFind	;					Stack: &q
-integer 1				; 4					Stack: &q &integer1
-load					; 					Stack: &q 4
+findAndMaybeDeclare 0	; q					Stack: &q
+integer 0				; 4					Stack: &q &integer1
 assign					; q = 4				Stack: (empty)
-identifier 2			; x					Stack: &identifier2
-findOrDeclareAndFind	; declare x			Stack: (empty)
-identifier 1			; q					Stack: &x &identifier1
-find					; 					Stack: &x &q
-load					; 					Stack: &x q
-integer 2				; 5					Stack: &x q &integer2
-load					; 					Stack: &x q 5
-identifier 3			; scale				Stack: &x q 5 &this &identifier3
-find					; 					Stack: &x q 5 &this &scale
-pushMethodBarrier		; for safety. consumed when invokeMethod returns.
+findAndMaybeDeclare 1	; x					Stack: (empty)
+find 0					; q					Stack: &x &q
+integer 1				; 5					Stack: &x q &integer2
+find 2					; scale				Stack: &x q 5 &this &scale
 invokeMethod 2			; run method with 2 params.  Will return to here.
-integer 3				; 2					Stack: &x scale() &integer3
-load					; 					Stack: &x scale() 2
+integer 2				; 2					Stack: &x scale() &integer3
 multiply				; 					Stack: &x scale() * 2
 assign					; x = 2*scale()		Stack: (empty)
 exit 0					; Done.
@@ -106,18 +97,13 @@ code:
 	
 By the time we get here, the VM has allocated and filled in the parameters, so we can invoke them.
 --------------------
-identifier 6		; result	Stack: &identifier6
-declareAndFind		; 			Stack: &result
-integer 4			; 0			Stack: &result 0
+declareAndFind 5	; result	Stack: &result
+integer 3			; 0			Stack: &result 0
 assign				; 			Stack: (empty)
-identifier 6		; result	Stack: &identifier6
-find				;			Stack: &result
-identifier 4		; one		Stack: &result &identifier4
-find				; 			Stack: &result &one
-identifier 5		; two		Stack: &result &one &identifier5
-find				; 			Stack: &result &one &two
+find 5				; result	Stack: &result
+find 3				; one		Stack: &result &one
+find 4				; two		Stack: &result &one &two
 multiply			;			Stack: &result one*two
 assign				;			Stack: (empty)
-identifier 6		;			Stack: &identifier6
-find				;			Stack: &result
+find 5				;			Stack: &result
 return 1			;			Stack: (empty)

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UILUserAppInRAM.h"
 
 @interface UILCodeExecutor : NSObject
+
+- (void) runApp: (UILUserAppInRAM *) app;
 
 @end
